@@ -50,4 +50,8 @@ public class CategoryService {
         category.setId(id);
         categoryMapper.deleteByPrimaryKey(category);
     }
+
+    public Category getCategoryById(Long id) {
+        return categoryMapper.selectByPrimaryKey(id);
+    }
 }

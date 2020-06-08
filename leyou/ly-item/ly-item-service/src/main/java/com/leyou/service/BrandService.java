@@ -2,7 +2,7 @@ package com.leyou.service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.jiyun.entity.PageResult;
+import com.leyou.common.PageResult;
 import com.leyou.dao.BrandMapper;
 import com.leyou.pojo.Brand;
 import com.leyou.pojo.Category;
@@ -70,5 +70,9 @@ public class BrandService {
 
     public List<Brand> findByBrand(Long cid) {
         return brandMapper.findByBrand(cid);
+    }
+
+    public Brand getBrandById(Long brandId) {
+        return brandMapper.selectByPrimaryKey(brandId);
     }
 }

@@ -2,9 +2,9 @@ package com.leyou.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.leyou.client.SkuClientServer;
-import com.leyou.client.SpecClientServer;
-import com.leyou.client.SpuClientServer;
+import com.leyou.client.SkuClient;
+import com.leyou.client.SpecClient;
+import com.leyou.client.SpuClient;
 import com.leyou.pojo.Goods;
 import com.leyou.pojo.Sku;
 import com.leyou.pojo.SpecParam;
@@ -24,12 +24,12 @@ import java.util.Map;
 public class GoodService {
 
     @Autowired
-    SkuClientServer skuClient;
+    SkuClient skuClient;
 
     @Autowired
-    SpecClientServer specClient;
+    SpecClient specClient;
     @Autowired
-    SpuClientServer spuClientServer;
+    SpuClient spuClientServer;
 
     private static final ObjectMapper MAPPER=new ObjectMapper();
 

@@ -63,8 +63,10 @@ public class CategoryController {
         return result;
     }
 
-
-
+    @RequestMapping("getCategoryById")
+    public Object getCategoryById(@RequestParam("id") Long id){
+        return categoryService.getCategoryById(id);
+    }
 
 
 

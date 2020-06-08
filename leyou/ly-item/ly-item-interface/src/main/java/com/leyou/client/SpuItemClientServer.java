@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RequestMapping("spu")
-public interface SpuItemClient {
+public interface SpuItemClientServer {
     @RequestMapping("page")
     public PageResult<SpuVo> page(@RequestParam("key") String key,
                                   @RequestParam("saleable") Integer saleable,

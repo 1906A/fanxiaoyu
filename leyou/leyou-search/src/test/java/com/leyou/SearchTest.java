@@ -1,6 +1,6 @@
 package com.leyou;
 
-import com.leyou.client.SpuClientServer;
+import com.leyou.client.SpuClient;
 import com.leyou.common.PageResult;
 import com.leyou.pojo.Goods;
 import com.leyou.repository.GoodsRepository;
@@ -20,7 +20,7 @@ import java.util.Optional;
 public class SearchTest {
 
     @Autowired
-    SpuClientServer spuClient;
+    SpuClient spuClient;
 
     @Autowired
     GoodService goodService;

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @RequestMapping("sku")
-public interface SkuItemClient {
+public interface SkuItemClientServer {
     @RequestMapping("list")
     public List<Sku> findSkuBySpuid(@RequestParam("id") Long id);
 }

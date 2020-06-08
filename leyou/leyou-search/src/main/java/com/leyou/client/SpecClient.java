@@ -3,5 +3,5 @@ package com.leyou.client;
 import org.springframework.cloud.openfeign.FeignClient;
 
 @FeignClient(name = "item-service")
-public interface SpecClientServer extends SpecItemClient{
+public interface SpecClient extends SpecItemClientServer {
 }

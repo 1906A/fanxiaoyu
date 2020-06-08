@@ -1,11 +1,14 @@
 package com.leyou.controller;
 
-import com.jiyun.entity.PageResult;
+import com.leyou.common.PageResult;
 import com.leyou.pojo.Brand;
 import com.leyou.pojo.Category;
 import com.leyou.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -67,6 +70,10 @@ public class BrandController {
         return brandService.findByBrand(cid);
     }
 
+    @RequestMapping("getBrandById")
+    public Brand getBrandById(@RequestParam("brandId") Long brandId){
+        return brandService.getBrandById(brandId);
+    }
 
 
 
