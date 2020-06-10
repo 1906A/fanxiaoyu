@@ -1,13 +1,13 @@
 package com.leyou.client;
 
-import com.leyou.pojo.SpecParam;
+import com.leyou.pojo.Specgroup;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@RequestMapping("specParam")
+@RequestMapping("spec")
 public interface SpecItemClientServer {
-    @RequestMapping("paramsByCid")
-    public List<SpecParam> findParamsByCidandSearching(@RequestParam("cid") Long cid);
+    @RequestMapping("findSpecByCid")
+    public List<Specgroup> findSpecByCid(@RequestParam("cid") Long cid);
 }

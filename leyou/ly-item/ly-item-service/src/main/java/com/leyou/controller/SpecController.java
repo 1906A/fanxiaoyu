@@ -16,6 +16,10 @@ public class SpecController {
     @Autowired
     private SpecGroupService specGroupService;
 
+    @RequestMapping("findSpecByCid")
+    public List<Specgroup> findSpecByCid(@RequestParam("cid") Long cid){
+        return specGroupService.findSpecGroup(cid);
+    }
     /*
     保存商品规格组
      */

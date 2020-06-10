@@ -60,6 +60,13 @@ public class SpecParamService {
      * @param cid
      * @return
      */
+    public List<SpecParam> findParamsByCidandSearchings(Long cid,Boolean generic) {
+        SpecParam specParam = new SpecParam();
+        specParam.setCid(cid);
+        specParam.setSearching(true);
+        specParam.setGeneric(generic);
+        return specParamMapper.select(specParam);
+    }
     public List<SpecParam> findParamsByCidandSearching(Long cid) {
         SpecParam specParam = new SpecParam();
         specParam.setCid(cid);

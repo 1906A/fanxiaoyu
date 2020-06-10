@@ -1,10 +1,13 @@
 package com.leyou.service;
 
 import com.leyou.dao.SpecGroupMapper;
+import com.leyou.dao.SpecParamMapper;
+import com.leyou.pojo.SpecParam;
 import com.leyou.pojo.Specgroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -12,6 +15,8 @@ public class SpecGroupService {
 
     @Autowired
     private SpecGroupMapper specGroupMapper;
+    @Autowired
+    private SpecParamMapper specParamMapper;
 
     public void saveSpecGroup(Specgroup specgroup) {
         specGroupMapper.insert(specgroup);
@@ -25,7 +30,20 @@ public class SpecGroupService {
     public List<Specgroup> findSpecGroup(Long cid) {
         Specgroup specgroup = new Specgroup();
         specgroup.setCid(cid);
-        return specGroupMapper.select(specgroup);
+        List<Specgroup> select = specGroupMapper.select(specgroup);
+        List<SpecParam> params = new ArrayList<>();
+        select.forEach(group->{
+            group.setParams(findSpecParamByGid(group.getId(),null,null));
+        });
+        return select;
+    }
+
+    public List<SpecParam> findSpecParamByGid(Long gid,Long cid,Boolean searching){
+        SpecParam specParam = new SpecParam();
+        specParam.setGroupId(gid);
+        specParam.setCid(cid);
+        specParam.setSearching(searching);
+        return specParamMapper.select(specParam);
     }
 
     /**

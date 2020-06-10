@@ -56,4 +56,9 @@ public class SpecParamController {
         List<SpecParam> paramsByCidandSearching = specParamService.findParamsByCidandSearching(cid);
         return paramsByCidandSearching;
     }
+    @RequestMapping("paramsByCids")
+    public List<SpecParam> findParamsByCidandSearchings(@RequestParam("cid") Long cid,@RequestParam("generic") Boolean generic){
+        List<SpecParam> paramsByCidandSearching = specParamService.findParamsByCidandSearchings(cid,generic);
+        return paramsByCidandSearching;
+    }
 }

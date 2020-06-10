@@ -5,6 +5,7 @@ import com.leyou.pojo.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -53,5 +54,13 @@ public class CategoryService {
 
     public Category getCategoryById(Long id) {
         return categoryMapper.selectByPrimaryKey(id);
+    }
+
+    public List<Category> findByIds(List<Long> ids) {
+        List<Category> result = new ArrayList<>();
+        ids.forEach(id ->{
+            result.add(categoryMapper.selectByPrimaryKey(id));
+        });
+        return result;
     }
 }

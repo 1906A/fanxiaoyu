@@ -68,8 +68,10 @@ public class CategoryController {
         return categoryService.getCategoryById(id);
     }
 
-
-
+    @RequestMapping("findByIds")
+    public Object findByIds(@RequestParam("ids") List<Long> ids){
+        return categoryService.findByIds(ids);
+    }
 
 
 
