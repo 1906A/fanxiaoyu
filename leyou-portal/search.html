@@ -180,7 +180,7 @@
                     <li class="yui3-u-1-5" v-for="(good,index) in goodList">
                         <div class="list-wrap">
                             <div class="p-img">
-                                <a href="item.html" target="_blank"><img :src="good.selected.images" height="200"/></a>
+                                <a :href="'item/'+good.id+'.html'" target="_blank"><img :src="good.selected.images" height="200"/></a>
                                 <ul class="skus">
                                     <li :class="{selected:sku.id==good.selected.id}"
                                         v-for="(sku,j) in good.skus"><img :src="sku.images"
@@ -427,7 +427,7 @@
                 searchTemp.filter[item.k] = value;
 
                 this.search = searchTemp;
-                console.log(this.search.filter);
+                console.log(this.search);
             },
             getShowParam(k,v){
                 let value = v;
