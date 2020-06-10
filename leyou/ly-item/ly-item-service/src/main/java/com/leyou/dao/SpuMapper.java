@@ -15,7 +15,7 @@ public interface SpuMapper extends Mapper<Spu> {
 
 
     @Update("update tb_spu set saleable =#{saleable} where id = #{id}")
-    void updateBySaleable(Boolean saleable,Long id);
+    void updateBySaleable(Boolean saleable, Long id);
     @Update("update tb_spu set valid =#{valid} where id = #{id}")
-    void updateByValid(Boolean valid,Long id);
+    void updateByValid(Boolean valid, Long id);
 }

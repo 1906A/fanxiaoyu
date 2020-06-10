@@ -52,16 +52,16 @@ public class GoodDetailController {
         Brand brand = brandClient.getBrandById(spu.getBrandId());
 
         //3、三级分类
-        List<Category> categorys = categoryClient.findByIds(Arrays.asList(spu.getCid1(), spu.getCid2(), spu.getCid3()));
+        List<Category> categoryList  = categoryClient.findByIds(Arrays.asList(spu.getCid1(), spu.getCid2(), spu.getCid3()));
 
         //4、skus
-        List<Sku> skus = skuClient.findSkuBySpuid(spuId);
+        List<Sku> skuList  = skuClient.findSkuBySpuid(spuId);
 
         //5、skuDetail
         SpuDetail spuDetail = spuClient.detail(spuId);
 
         //6、属性组
-        List<Specgroup> specgroups = specClient.findSpecByCid(spu.getCid3());
+        List<Specgroup> groups  = specClient.findSpecByCid(spu.getCid3());
 
         //7、特殊属性的集合
         List<SpecParam> params = specParamClient.findParamsByCidandSearchings(spu.getCid3(), false);
@@ -72,11 +72,11 @@ public class GoodDetailController {
 
 
         model.addAttribute("spu",spu);
-        model.addAttribute("brand",brand);
-        model.addAttribute("categorys",categorys);
-        model.addAttribute("skus",skus);
         model.addAttribute("spuDetail",spuDetail);
-        model.addAttribute("groups",specgroups);
+        model.addAttribute("skuList",skuList);
+        model.addAttribute("brand",brand);
+        model.addAttribute("groups",groups);
+        model.addAttribute("categoryList",categoryList);
         model.addAttribute("paramMap",paramMap);
         return "item";
     }

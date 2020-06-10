@@ -13,7 +13,7 @@ public interface SpecParamItemClientServer {
     @RequestMapping("paramsByCid")
     public List<SpecParam> findParamsByCidandSearching(@RequestParam("cid") Long cid);
     @RequestMapping("paramsByCids")
-    public List<SpecParam> findParamsByCidandSearchings(@RequestParam("cid") Long cid,@RequestParam("generic") Boolean generic);
+    public List<SpecParam> findParamsByCidandSearchings(@RequestParam("cid") Long cid, @RequestParam("generic") Boolean generic);
     @RequestMapping("groups/{cid}")
     public List<Specgroup> groups(@PathVariable("cid") Long cid);
 }
